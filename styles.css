@@ -55,19 +55,17 @@ th {
     text-align: center;
 }
 
-.custom-file-button {
-    text-align: center;
-    display: inline-block;
-    padding: 12px 20px;
+#customFileButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
     font-size: 1em;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
-
 .custom-file-button:hover {
     background-color: #45a049;
 }

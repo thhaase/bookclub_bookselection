@@ -1,43 +1,43 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buchauswahl - Buchclub</title>
+    <title>Bookclub - Bookselection</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Buchauswahl - Buchclub</h1>
+    <h1>Bookclub - Bookselection</h1>
     <div class="container">
         <div class="card" id="leftCard">
-            <h2>Buchliste</h2>
+            <h2>Book Lust</h2>
             <div id="tableContainer">
                 <div id="uploadInstructions">
-                    <h3>Anleitung zum Hochladen der Buchliste</h3>
+                    <h3>How to upload a book list</h3>
                     <ol>
-                        <li>Lade die Buchliste als Markdowndatei (.md) herunter.</li>
-                        <li>Klicke auf 'Datei auswählen' oben.</li>
-                        <li>Wähle die vorbereitete .md-Datei aus.</li>
-                        <li>Nach dem Hochladen wird die Tabelle hier angezeigt.</li>
-                        <li>Anschließend kann eine bestimmte Anzahl an Zeilen ausgewürfelt werden.</li>
+                        <li>Download the book list as a Markdownfile (.md).</li>
+                        <li>Click 'Choose File' below.</li>
+                        <li>Choose your downloaded .md-File.</li>
+                        <li>After the upload the table is displayed here.</li>
+                        <li>Afterwards a certain number of lines can be rolled out.</li>
                     </ol>
-                    <p><strong>Hinweis:</strong> Stellen Sie sicher, dass Ihre Tabelle korrekt formatiert ist, um optimale Ergebnisse zu erzielen.</p>
+                    <p><strong>Note:</strong> Make sure that your table is formatted correctly to achieve optimum results.</p>
                 </div>
                 <input type="file" id="fileInput" accept=".md" style="display: none;">
-                <button id="customFileButton" class="custom-file-button">Datei auswählen</button>
+                <button id="customFileButton" class="custom-file-button">Choose File</button>
                 <span id="fileNameDisplay"></span>            </div>
         </div>
         <div class="card" id="middleCard" style="text-align: center;">
-            <h2>Auswahl</h2>
+            <h2>Selection</h2>
             <input type="number" id="rowCount" min="1" placeholder="Anzahl der Zeilen" style="width: 40%;">
             <div id="diceContainer"></div>
             <p id="errorMessage" class="error-message"></p>
-            <button id="rollButton">Würfeln</button>
+            <button id="rollButton">Roll the Dice</button>
         </div>
         <div class="card" id="rightCard">
-            <h2>Ausgewählte Bücher</h2>
+            <h2>Selected Books</h2>
             <div id="selectedBooks"></div>
-            <button id="copyButton" class="copy-button">Kopieren</button>
+            <button id="copyButton" class="copy-button">Copy</button>
         </div>
     </div>
 

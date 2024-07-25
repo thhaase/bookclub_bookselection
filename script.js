@@ -88,14 +88,14 @@ function copyToClipboard(text) {
     navigator.clipboard.writeText(text).then(() => {
         const copyButton = document.getElementById('copyButton');
         const originalText = copyButton.textContent;
-        copyButton.textContent = 'Kopiert!';
+        copyButton.textContent = 'Copied!';
         copyButton.disabled = true;
         setTimeout(() => {
             copyButton.textContent = originalText;
             copyButton.disabled = false;
         }, 2000);
     }, (err) => {
-        console.error('Fehler beim Kopieren: ', err);
+        console.error('Error when Copying: ', err);
     });
 }
 
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (tableData) {
                     displayTable(tableData, 'tableContainer');
                 } else {
-                    document.getElementById('tableContainer').textContent = 'Keine gültige Tabelle in der Markdown-Datei gefunden';
+                    document.getElementById('tableContainer').textContent = 'No valid table found in the Markdown file';
                 }
             };
             reader.readAsText(file);
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     rollButton.addEventListener('click', () => {
         const count = parseInt(rowCountInput.value);
         if (isNaN(count) || count < 1 || count > totalRowCount) {
-            errorMessage.textContent = `Bitte geben Sie eine gültige Zeilenanzahl zwischen 1 und ${totalRowCount} ein`;
+            errorMessage.textContent = `Please enter a valid number of rows between 1 and ${totalRowCount}`;
             return;
         }
         errorMessage.textContent = '';
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 displayTable(selectedTable, 'selectedBooks');
             }, count * 200 + 1000); // Wait for animation to complete
         } else {
-            errorMessage.textContent = 'Bitte laden Sie zuerst eine Tabelle hoch';
+            errorMessage.textContent = 'Please upload a table first';
         }
     });
 
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const textToCopy = '- ' + tableToText(selectedTableData);
             copyToClipboard(textToCopy);
         } else {
-            errorMessage.textContent = 'Bitte wählen Sie zuerst Bücher aus.';
+            errorMessage.textContent = 'Please select books first.';
         }
     });
 });
