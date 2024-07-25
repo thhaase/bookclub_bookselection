@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buchauswahl - Buchclub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Buchauswahl - Buchclub</h1>
+    <div class="container">
+        <div class="card" id="leftCard">
+            <h2>Buchliste</h2>
+            <div id="tableContainer">
+                <div id="uploadInstructions">
+                    <h3>Anleitung zum Hochladen der Buchliste</h3>
+                    <ol>
+                        <li>Lade die Buchliste als Markdowndatei (.md) herunter.</li>
+                        <li>Klicke auf 'Datei auswählen' oben.</li>
+                        <li>Wähle die vorbereitete .md-Datei aus.</li>
+                        <li>Nach dem Hochladen wird die Tabelle hier angezeigt.</li>
+                        <li>Anschließend kann eine bestimmte Anzahl an Zeilen ausgewürfelt werden.</li>
+                    </ol>
+                    <p><strong>Hinweis:</strong> Stellen Sie sicher, dass Ihre Tabelle korrekt formatiert ist, um optimale Ergebnisse zu erzielen.</p>
+                </div>
+                <input type="file" id="fileInput" accept=".md" style="display: none;">
+                <button id="customFileButton" class="custom-file-button">Datei auswählen</button>
+                <span id="fileNameDisplay"></span>            </div>
+        </div>
+        <div class="card" id="middleCard" style="text-align: center;">
+            <h2>Auswahl</h2>
+            <input type="number" id="rowCount" min="1" placeholder="Anzahl der Zeilen" style="width: 40%;">
+            <div id="diceContainer"></div>
+            <p id="errorMessage" class="error-message"></p>
+            <button id="rollButton">Würfeln</button>
+        </div>
+        <div class="card" id="rightCard">
+            <h2>Ausgewählte Bücher</h2>
+            <div id="selectedBooks"></div>
+            <button id="copyButton" class="copy-button">Kopieren</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
