@@ -7,40 +7,44 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Bookclub - Bookselection</h1>
-    <div class="container">
-        <div class="card" id="leftCard">
-            <h2>Book Lust</h2>
-            <div id="tableContainer">
-                <div id="uploadInstructions">
-                    <h3>How to upload a book list</h3>
-                    <ol>
-                        <li>Download the book list as a Markdownfile (.md).</li>
-                        <li>Click 'Choose File' below.</li>
-                        <li>Choose your downloaded .md-File.</li>
-                        <li>After the upload the table is displayed here.</li>
-                        <li>Afterwards a certain number of lines can be rolled out.</li>
-                    </ol>
-                    <p><strong>Note:</strong> Make sure that your table is formatted correctly to achieve optimum results.</p>
+    <div class="background"></div>
+        <div class="content">
+            <h1 style="color: rgb(220, 92, 0);">Bookclub - Bookselection</h1>
+            <div class="container">
+                <div class="card" id="leftCard">
+                    <h2>Book List</h2>
+                    <div id="tableContainer">
+                        <div id="uploadInstructions">
+                            <h3>How to upload a book list</h3>
+                            <ol>
+                                <li>Download the book list as a Markdownfile (.md).</li>
+                                <li>Click 'Choose File' below.</li>
+                                <li>Choose your downloaded .md-File.</li>
+                                <li>After the upload the table is displayed here.</li>
+                                <li>Afterwards a certain number of lines can be rolled out.</li>
+                            </ol>
+                            <p><strong>Note:</strong> Make sure that your table is formatted correctly to achieve optimum results.</p>
+                        </div>
+                        <input type="file" id="fileInput" accept=".md" style="display: none;">
+                        <button id="customFileButton" class="custom-file-button">Choose File</button>
+                        <span id="fileNameDisplay"></span>            </div>
                 </div>
-                <input type="file" id="fileInput" accept=".md" style="display: none;">
-                <button id="customFileButton" class="custom-file-button">Choose File</button>
-                <span id="fileNameDisplay"></span>            </div>
-        </div>
-        <div class="card" id="middleCard" style="text-align: center;">
-            <h2>Selection</h2>
-            <input type="number" id="rowCount" min="1" placeholder="Number of Rows" style="width: 40%;">
-            <div id="diceContainer"></div>
-            <p id="errorMessage" class="error-message"></p>
-            <button id="rollButton">Roll the Dice</button>
-        </div>
-        <div class="card" id="rightCard">
-            <h2>Selected Books</h2>
-            <div id="selectedBooks"></div>
-            <button id="copyButton" class="copy-button">Copy</button>
-        </div>
-    </div>
+                <div class="card" id="middleCard" style="text-align: center;">
+                    <h2>Selection</h2>
+                    <input type="number" id="rowCount" min="1" placeholder="Number of Rows" style="width: 40%;">
+                    <div id="diceContainer"></div>
+                    <p id="errorMessage" class="error-message"></p>
+                    <button id="rollButton">Roll the Dice</button>
+                </div>
+                <div class="card" id="rightCard">
+                    <h2>Selected Books</h2>
+                    <div id="selectedBooks"></div>
+                    <button id="copyButton" class="copy-button">Copy</button>
+                </div>
+            </div>
 
-    <script src="script.js"></script>
+            <script src="script.js"></script>
+        </div>  
+    </div>
 </body>
 </html>
