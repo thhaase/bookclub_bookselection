@@ -1,11 +1,11 @@
 body, html {
     color: white;
-    font-size: 18px; /* Increased from 18px */
+    font-size: 16px;
     line-height: 1.3;
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .background {
@@ -29,62 +29,57 @@ body, html {
     bottom: 0;
     overflow: auto;
     padding: 20px;
-    background-color: rgba(6, 4, 0, 0.429); /* Adjust for desired overlay effect */
+    background-color: rgba(6, 4, 0, 0.256);
+    box-sizing: border-box;
 }
 
 .container {
     position: relative;
     z-index: 1;
-    /* Keep your existing styles for .container */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .card {
     background-color: rgb(92, 64, 51);
-    /* Other existing styles */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-basis: auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 h1, h2, h3 {
     color: #f2b57b;
     text-shadow: 3px 3px 4px rgba(162, 114, 0, 0.598);
-    /* Other existing styles */
 }
 
 h1 {
     text-align: center;
     color: #f2b57b;
-    font-size: 2.5em; /* Relative to the new base font size */
+    font-size: 2em;
 }
 
 h2 {
-    font-size: 2em; /* Relative to the new base font size */
+    font-size: 1.5em;
 }
 
 h3 {
-    font-size: 1.5em; /* Relative to the new base font size */
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.card {
-    flex-basis: 30%;
-    background-color: rgb(92, 64, 51);
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.2em;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
+    overflow-x: auto;
+    display: block;
 }
 
 th, td {
     border: 2px solid #2e1200;
-    padding: 10px; /* Increased from 8px for better spacing */
+    padding: 10px;
     text-align: left;
 }
 
@@ -107,8 +102,11 @@ th {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    width: 100%;
+    max-width: 200px;
 }
-.custom-file-button:hover {
+
+#customFileButton:hover {
     background-color: #ffa305;
 }
 
@@ -117,21 +115,26 @@ th {
     margin-top: 10px;
     font-style: italic;
 }
+
 #rowCount {
     width: 100%;
-    padding: 12px; /* Increased from 10px */
+    max-width: 200px;
+    padding: 12px;
     margin-top: 10px;
-    font-size: 1em; /* Relative to the new base font size */
+    font-size: 1em;
     border: 0px;
-    background-color: #ffa357d6;
+    border-radius: 5px;
+    background-color: #ffd690;
+    box-sizing: border-box;
 }
 
 #rollButton {
     display: block;
-    width: 200px;
+    width: 100%;
+    max-width: 200px;
     margin: 20px auto;
-    padding: 12px; /* Increased from 10px */
-    font-size: 1.1em; /* Relative to the new base font size */
+    padding: 12px;
+    font-size: 1.1em;
     background-color: #ffc259;
     color: black;
     border: none;
@@ -177,7 +180,7 @@ th {
         transform: rotate(0deg);
     }
     100% {
-        top: calc(100% - 44px); /* Adjusted to account for border */
+        top: calc(100% - 44px);
         transform: rotate(360deg);
     }
 }
@@ -193,6 +196,8 @@ th {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    width: 100%;
+    max-width: 200px;
 }
 
 .copy-button:hover {
@@ -205,4 +210,44 @@ th {
     margin-top: 10px;
 }
 
+/* Media Queries for larger screens */
+@media screen and (min-width: 768px) {
+    body, html {
+        font-size: 18px;
+    }
 
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .card {
+        flex-basis: 30%;
+    }
+
+    table {
+        display: table;
+        overflow-x: visible;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+}
+
+/* Additional responsive adjustments for very small screens */
+@media screen and (max-width: 480px) {
+    .dice {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+}
