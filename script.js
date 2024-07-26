@@ -41,10 +41,28 @@ function displayTable(tableData, containerId) {
 }
 
 function selectRandomRows(tableData, count) {
+    // Remove the header row
     const dataRows = tableData.slice(1);
-    const shuffled = dataRows.sort(() => 0.5 - Math.random());
+    
+    // Create a copy of the data rows
+    const shuffled = [...dataRows];
+    
+    // Durstenfeld's algorithm
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        // Generate a random index between 0 and i (inclusive)
+        const j = Math.floor(crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1) * (i + 1));
+        
+        // Swap elements at indices i and j
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    
+    // Select the first 'count' rows after shuffling
     const selectedRows = shuffled.slice(0, count);
+    
+    // Extract the row numbers (assuming they're in the first column)
     const selectedRowNumbers = selectedRows.map(row => parseInt(row[0]));
+    
+    // Return the selected rows with the header and the row numbers
     return {
         selectedTable: [tableData[0], ...selectedRows],
         selectedRowNumbers: selectedRowNumbers
